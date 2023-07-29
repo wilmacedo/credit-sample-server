@@ -1,8 +1,9 @@
 import { errorHandler } from '@/utils/error-handler';
 import cors from 'cors';
 import express from 'express';
+import 'express-async-errors';
 import morgan from 'morgan';
-import { usersRouter } from './http/controllers/users/routes';
+import { router } from './routes';
 
 export const app = express();
 
@@ -15,6 +16,6 @@ app.get('/health', (_, response) => {
   return response.status(200).json({ health: 'ok' });
 });
 
-app.use(usersRouter);
+app.use('/', router);
 
 app.use(errorHandler);

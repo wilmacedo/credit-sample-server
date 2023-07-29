@@ -18,7 +18,7 @@ export async function authenticate(request: Request, response: Response) {
 
     const { user } = await authenticateCase.execute({ email, password });
 
-    const token = jwt.sign({ name: user.name }, env.JWT_SECRET);
+    const token = jwt.sign({ user }, env.JWT_SECRET);
 
     return response.status(200).json({ token });
   } catch (error) {
