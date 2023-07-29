@@ -1,7 +1,7 @@
+import { errorHandler } from '@/utils/error-handler';
 import cors from 'cors';
 import express from 'express';
 import morgan from 'morgan';
-import { errorHandler } from 'utils/error-handler';
 
 export const app = express();
 

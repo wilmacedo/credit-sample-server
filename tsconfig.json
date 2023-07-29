@@ -11,7 +11,7 @@
     "sourceMap": true,
     "removeComments": true,
     "outDir": "dist",
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "lib": ["esnext"],
     "typeRoots": ["./src/types", "./node_modules/@types"],
     "paths": {
