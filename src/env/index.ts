@@ -5,6 +5,7 @@ const schema = z.object({
   NODE_ENV: z
     .enum(['development', 'production', 'test'])
     .default('development'),
+  JWT_SECRET: z.string().default('anyencryptedsecrethere'),
 });
 
 const _env = schema.safeParse(process.env);

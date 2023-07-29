@@ -1,5 +1,5 @@
 import { PrismaUserRepository } from '@/repositories/prisma/prisma-user-repository';
-import { Register } from '../register';
+import { Register } from '../users/register';
 
 export function makeRegister() {
   const userRepository = new PrismaUserRepository();
