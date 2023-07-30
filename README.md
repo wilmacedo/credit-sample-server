@@ -1,6 +1,11 @@
 # Will Pay Server
 
-Simple project to test knowlegds of Node.js, Express.js, Prisma and MongoDB.
+Simple project to test knowlegds.
+
+- [Node.js](https://nodejs.org/en/docs/guides/nodejs-docker-webapp)
+- [Express.js](https://expressjs.com/pt-br/)
+- [Prisma](https://www.prisma.io/)
+- [MongoDB](https://www.mongodb.com/)
 
 ## Setuping the environment
 
