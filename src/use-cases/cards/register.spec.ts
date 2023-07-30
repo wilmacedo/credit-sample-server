@@ -9,7 +9,6 @@ import { Register } from './register';
 let userRepository: InMemoryUserRepository;
 let cardRepository: InMemoryCardRepository;
 let sut: Register;
-
 let user: User;
 
 describe('Register case', () => {
@@ -30,7 +29,7 @@ describe('Register case', () => {
       cardholder: 'Wil Macedo',
       cvv: '123',
       expiration: new Date(),
-      number: '1234567890123451',
+      number: '1234567890123452',
       userId: user.id,
     });
 
@@ -42,7 +41,7 @@ describe('Register case', () => {
       cardholder: 'Wil Macedo',
       cvv: '123',
       expiration: new Date(),
-      number: '1234567890123451',
+      number: '1234567890123452',
       userId: user.id,
     };
 
