@@ -26,7 +26,20 @@ Install all depedencies with your package manager
 And push our schema to container using prisma
 
 ```bash
-  pnpm primsa db push
+  pnpm prisma db push
+  pnpm prisma generate
+```
+
+And finally run dev script
+
+```bash
+  pnpm run dev
+```
+
+Or build
+
+```bash
+  pnpm run build
 ```
 
 ## Environment Variables

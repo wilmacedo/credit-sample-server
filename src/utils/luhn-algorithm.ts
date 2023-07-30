@@ -7,15 +7,24 @@ export function luhnValidator(cardNumber: string): boolean {
   const mappingNumbers = [0, 2, 4, 6, 8, 1, 3, 5, 7, 9];
 
   let length = cardNumber.length;
-  const bit = 1;
+  let bit = 1;
   let sum = 0;
-  let index: number;
+  let digit: number;
 
   while (length) {
-    index = parseInt(cardNumber.charAt(--length), 10);
+    digit = parseInt(cardNumber.charAt(--length), 10);
 
-    sum += bit ? mappingNumbers[index] : index;
+    if (isNaN(digit)) {
+      return false;
+    }
+
+    bit ^= 1;
+    if (bit) {
+      digit = mappingNumbers[digit];
+    }
+
+    sum += digit > 9 ? digit - 9 : digit;
   }
 
-  return sum ? sum % 10 === 0 : false;
+  return sum % 10 === 0;
 }
