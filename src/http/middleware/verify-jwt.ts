@@ -1,6 +1,11 @@
 import { env } from '@/env';
+import { User } from '@prisma/client';
 import { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
+
+interface JwtPayload {
+  user: User;
+}
 
 export async function verifyJwt(
   request: Request,
@@ -10,13 +15,13 @@ export async function verifyJwt(
   try {
     const { authorization } = request.headers;
     if (!authorization) {
-      return new Error();
+      throw new Error();
     }
 
     const [, token] = authorization.split(' ');
-    const { name } = jwt.verify(token, env.JWT_SECRET) as { name: string };
+    const { user } = jwt.verify(token, env.JWT_SECRET) as JwtPayload;
 
-    if (!name) {
+    if (!user) {
       throw new Error();
     }
 

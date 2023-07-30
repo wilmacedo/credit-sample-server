@@ -1,4 +1,5 @@
 import { CardAlreadyRegisteredError } from '@/use-cases/errors/card-already-registered-error';
+import { InvalidCardNumberError } from '@/use-cases/errors/invalid-card-number-error';
 import { UserNotExistsError } from '@/use-cases/errors/user-not-exists-error';
 import { makeCardRegister } from '@/use-cases/factories/make-card-register';
 import { Request, Response } from 'express';
@@ -29,7 +30,8 @@ export async function register(request: Request, response: Response) {
   } catch (error) {
     if (
       error instanceof CardAlreadyRegisteredError ||
-      error instanceof UserNotExistsError
+      error instanceof UserNotExistsError ||
+      error instanceof InvalidCardNumberError
     ) {
       return response.status(409).json({ message: error.message });
     }
