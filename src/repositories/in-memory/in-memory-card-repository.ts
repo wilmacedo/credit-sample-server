@@ -31,7 +31,7 @@ export class InMemoryCardRepository implements CardRepository {
       cvv: data.cvv,
       expiration: new Date(data.expiration),
       number: data.number,
-      userId: '1',
+      userId: (data.User.connect || { id: '1' }).id || '1',
     };
 
     this.cards.push(card);
